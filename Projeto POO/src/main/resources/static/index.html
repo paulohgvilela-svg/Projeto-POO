@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciamento de Ferramentas - Projeto POO</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 900px; margin: auto; }
+        h1 { color: #333; }
+        h2 { border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 30px; }
+        form div { margin-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], select, input[type="number"] { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🔧 Gerenciador de Proprietários e Ferramentas</h1>
+
+    <h2>👤 Criar Novo Proprietário</h2>
+    <form id="proprietario-form">
+        <div>
+            <label for="p-nome">Nome:</label>
+            <input type="text" id="p-nome" required>
+        </div>
+        <div>
+            <label for="p-contato">Contato:</label>
+            <input type="text" id="p-contato" required>
+        </div>
+        <div>
+            <label for="p-endereco">Endereço:</label>
+            <input type="text" id="p-endereco" required>
+        </div>
+        <div>
+            <label for="p-cpf">CPF:</label>
+            <input type="text" id="p-cpf" required>
+        </div>
+        <button type="submit">Cadastrar Proprietário</button>
+    </form>
+
+    <h2>📋 Proprietários Cadastrados</h2>
+    <table id="proprietarios-list">
+        <thead>
+        <tr><th>ID</th><th>Nome</th><th>Contato</th><th>Ação</th></tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <h2>🔨 Criar Nova Ferramenta</h2>
+    <form id="ferramenta-form">
+        <div>
+            <label for="f-nome">Nome:</label>
+            <input type="text" id="f-nome" required>
+        </div>
+        <div>
+            <label for="f-condicao">Condição:</label>
+            <input type="text" id="f-condicao" required>
+        </div>
+        <div>
+            <label for="f-marca">Marca:</label>
+            <input type="text" id="f-marca" required>
+        </div>
+        <div>
+            <label for="f-proprietario-id">ID do Proprietário (Use um ID da lista acima):</label>
+            <input type="number" id="f-proprietario-id" required>
+        </div>
+        <button type="submit">Cadastrar Ferramenta</button>
+    </form>
+
+    <h2>🛠️ Ferramentas Cadastradas</h2>
+    <table id="ferramentas-list">
+        <thead>
+        <tr><th>ID</th><th>Nome</th><th>Status</th><th>Proprietário ID</th><th>Ações</th></tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script src="api.js"></script>
+</body>
+</html>
